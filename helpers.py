@@ -7,7 +7,7 @@ from functools import wraps
 from random import randint
 from cs50 import SQL
 
-db = SQL("sqlite:///sparta.db")
+db = SQL("postgres://njniejknyhtyxb:0efce18ce29dff8371f186ff15d5b5870945be5bb2a743a87ab4f706a6a929b3@ec2-54-246-92-116.eu-west-1.compute.amazonaws.com:5432/dd4jcgtmu8vngd")
 
 def apology(message, code=400):
     """Render message as an apology to user."""
