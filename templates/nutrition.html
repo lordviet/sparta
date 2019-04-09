@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Nutrition
+{% endblock %}
+
+{% block main %}
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <h1>Nutrition</h1>
+    <div onload="firstTime()">
+        <h6 style="display:none;" id="firstTime" class="mb-4">
+            To begin using this feature calculate what your <a href="/calories">calorie intake</a> should be.<br>
+            Afterwards, you can check the nutritional ingredients different food and drinks by searching for it.<br>
+            If you have already consumed it, you can record the calories and track your daily intake.
+        </h6>
+        <h4>
+            Your daily calorie intake should be <span id="calorieGoal">{{ caloriesGoal.calories }}</span>
+        </h4>
+        <h4>
+            Your current calories for today are {{ dailyCalories }}
+        </h4>
+
+        <h4>
+            Check or log food
+        </h4>
+        <div class="form-group">
+            <input class="form-control" id="check" type="text" placeholder="Food" autocomplete="on">
+        </div>
+        <div class="form-group">
+            <input class="form-control" id="grams" type="number" placeholder="Grams" min="0">
+        </div>
+        <button class="btn btn-primary" onclick="check()">Check</button>
+        <div id="table">
+            <table class="table table-striped m-5">
+                <thead>
+                    <tr>
+                        <th>Food</th>
+                        <th>Calories</th>
+                        <th>Protein</th>
+                        <th>Fat</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody id="results"></tbody>
+                <tfoot>
+                    <tr>
+                        <td><b>Sum</b></td>
+                        <td id="calSum">0</td>
+                        <td id="proteinSum">0</td>
+                        <td id="fatSum">0</td>
+                        <td id="carbSum">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <form action="/nutrition" method="post">
+                            <input style="display:none;" id="food" autocomplete="off" name="food" readonly class="form-control" value =""/>
+                            <input style="display:none;" id="calorieInput" autocomplete="off" name="calorieIntake" readonly class="form-control" value ="0"/>
+                            <button style="display:none;" id="button" class="btn btn-primary" type="submit">Record sum of calories</button>
+                        </form>
+        <div id="errors"></div>
+        <script>
+            $("#check").autocomplete({
+                source: `http://api.edamam.com/auto-complete`
+            });
+
+            (function(){
+                if($("#calorieGoal").text() == "0"){
+                $("#firstTime").show();
+                }
+            })();
+        </script>
+    </div>
+    <style>
+        h1{margin-bottom: 20px;}
+        h4{margin-top: 40px; margin-bottom: 25px;}
+        form{margin-top:20px}
+        #table{display:none;}
+    </style>
+{% endblock %}

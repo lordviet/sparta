@@ -1,0 +1,76 @@
+<link href="/static/indexStyles.css" rel="stylesheet"/>
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<style>
+    body{
+        background-color:transparent;
+        color:white;
+        width:100%;
+        height:100%;
+        background: url("/static/images/background.jpg") no-repeat center center fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+</style>
+<div id="cover"></div>
+<div id="loader"></div>
+<div id="exerciseContainer">
+        <h1 class="h1Styles"><span id="spartan-h1">Spartan</span></h1>
+        <h2 class="h2Styles">Set Your Goals:</h2>
+        <div class="flexbodyContainer">
+            <div class="left">
+                <div class="deadliftImg">
+                    <a href="/deadlift">
+                        <img src="/static/images/deadlift.jpg" alt="A man preparing to deadlift">
+                    </a>
+                </div>
+            </div>
+            <div class="center">
+                <div class="benchImg">
+                    <a href="/bench">
+                        <img src="/static/images/bench.jpg" alt="A man doing a flat barbell bench press rep">
+                    </a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="squatImg">
+                    <a href="/squat">
+                        <img src="/static/images/squat.jpg" alt="A man performing a low bar squat">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="flexbodyContainer">
+            <div class="left">
+                <div class="ohpImg">
+                    <a href="/overheadpress">
+                        <img src="/static/images/ohp.jpg" alt="Overhead shoulder press lockout">
+                    </a>
+                </div>
+            </div>
+            <div class="center">
+                <div class="pullupsImg">
+                    <a href="/pullups">
+                        <img src="/static/images/pullups.jpg" alt="A wide grip standard pull-up">
+                    </a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="moreImg">
+                    <a href="/nutrition">
+                        <img src="/static/images/nutrition.jpg" alt="A photo of different plates with food">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+</div>
+<script>hideElements();</script>
+
+{% endblock %}

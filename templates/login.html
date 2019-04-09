@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="greeting">Welcome
+            <span id="spartan">SPARTAN</span>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" id="username" name="username" placeholder="Username" type="text"/>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" id="password" name="password" placeholder="Password" type="password"/>
+        </div>
+        <button class="btn btn-primary" type="submit" onclick="loginValidate()">Log In</button>
+    </form>
+    <footer class="small text-center text-muted" id="signup">
+            Don't have an account? <a href="/register">Sign Up</a>
+    </footer>
+    <div id="errors"></div>
+{% endblock %}

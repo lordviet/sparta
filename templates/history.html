@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h1>History of Workouts</h1>
+    <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Weight (kg)</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in history %}
+                <tr>
+                    <td>{{ data.exercise }}</td>
+                    <td>{{ data.sets }}</td>
+                    <td>{{ data.reps }}</td>
+                    <td>{{ data.kg }}</td>
+                    <td>{{ data.date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <style>
+        h1{margin-bottom: 20px;}
+    </style>
+{% endblock %}

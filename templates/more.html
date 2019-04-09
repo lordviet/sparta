@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    More
+{% endblock %}
+
+{% block main %}
+        <div class="greeting">
+            <h2><span id="spartan">SPARTAN</span> Your quote is:</h2>
+            <br>
+            <h2>
+                "{{ quote }}"
+            </h2>
+            </br>
+        </div>
+        <footer class="small text-center text-muted" id="signup">
+            This app was develeoped as a final project of CS50X by Dimitar Todev
+        </footer>
+
+{% endblock %}

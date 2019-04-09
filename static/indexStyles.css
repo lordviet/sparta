@@ -1,0 +1,157 @@
+ @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+        .h1Styles{
+            margin: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 75px;
+            text-shadow: 0 0 .5rem black;
+        }
+
+        #spartan-h1{
+            color:#bf0000;
+            font-family: 'Permanent Marker', cursive;
+            text-shadow: 0 0 1rem white;
+        }
+
+        .h2Styles{
+            margin: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 55px;
+            text-shadow: 0 0 .5rem black;
+        }
+
+        .flexbodyContainer{
+            display: flex;
+            color: white;
+            justify-content: space-around;
+            padding: 0px;
+            margin: 10px;
+            transition: 250ms all ease-in-out;
+        }
+
+
+        .left, .center, .right{
+            flex-basis: 33%;
+            border: 2px solid white;
+            margin: 10px;
+        }
+
+        .left:hover, .center:hover, .right:hover{
+            box-shadow: 0 0 10px #bf0000;
+            transform: scale(1.030);
+            border: 2px solid #bf0000;
+            transition: 0.1s ease-in;
+        }
+
+        img{
+           width:100%;
+           height:auto;
+        }
+        .benchImg{
+            background-image: url("/static/images/benchOverlay.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        .deadliftImg{
+            background-image: url("/static/images/deadliftOverlay.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        .squatImg{
+            background-image: url("/static/images/squatOverlay.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        .ohpImg{
+            background-image: url("/static/images/ohpOverlay.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        .pullupsImg{
+            background-image: url("/static/images/pullupsOverlay.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        .moreImg{
+            background-image: url("/static/images/nutritionOverlay.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        img:hover{
+            opacity:0.20;
+            transition: 0.15s ease-in;
+            z-index: 0;
+        }
+
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+            .body{
+                flex-direction: column;
+                margin: 10px;
+                padding: 0px;
+
+            }
+        }
+        @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+            .body{
+                flex-direction: column;
+                margin: 10px;
+                padding: 0px;
+            }
+        }
+
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 150px;
+            height: 150px;
+            margin: -75px 0 0 -75px;
+            border: 16px solid #d8d8d8;
+            border-radius: 50%;
+            border-top: 16px solid #bf0000;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+            z-index: 9999;
+        }
+
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+        #cover {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top:0;
+            left: 0;
+            background: #fff;
+            z-index:9998;
+        }

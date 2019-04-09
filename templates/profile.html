@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <h1>{{ username }}</h1>
+    <form action="/newpass">
+       <button class="btn btn-primary" id="passbutton" type="submit">Change Password</button>
+    </form>
+    <h4>My Thoughts</h4>
+    </h4>
+    <form action="/profile" method="post">
+       <textarea type="subject" id="post" name="post" placeholder="Say something"></textarea>
+       <br>
+       <button id="postbutton" class="btn btn-primary" type="submit" onclick="postValidate()">Post</button>
+    </form>
+    <div id="errors"> </div>
+    <table class="table table-striped">
+       <thead>
+          <tr>
+             <th>Posts</th>
+          </tr>
+       </thead>
+       <tbody>
+          {% for post in posts %}
+          <form action="/profile" method="post">
+             <tr>
+                <td>
+                   <div  style="word-break:break-all;">
+                      {{ post.post }}
+                      <input class="invisible" type="text" name="current_post" value="{{ post.post }}" readonly><br>
+                      <input class="invisible" type="text" name="current_id" value="{{ post.id }}" readonly><br>
+                      <button id="deletebutton" type="submit">
+                      <i class="far fa-trash-alt"></i>
+                      </button>
+                   </div>
+                </td>
+             </tr>
+          </form>
+          {% endfor %}
+       </tbody>
+    </table>
+    <style>
+       #passbutton{margin-top: 30px; margin-bottom: 30px;}
+       #postbutton{margin-top: 20px; margin-bottom: 15px;}
+       #deletebutton{padding: 0; border: none; background: none; float:right;}
+       form{margin-top:20px}
+       #post{width: 300px; height: 150px;}
+       table{table-layout:fixed; width:100%;}
+       i{
+       float: right;
+       cursor:pointer;
+       }
+       i:hover{color: red;}
+       .invisible{display:none;}
+    </style>
+    {% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overhead Press
+{% endblock %}
+
+{% block main %}
+    <h1>Overhead Press</h1>
+    <form action="/overheadpress" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="overheadpressORM"
+            id="currentORM" placeholder="Current One Rep Max" type="number" min="1" step="0.01"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="goal" id="goal" placeholder="Set Initial Goal (kg)" type="number" min="1" step="0.01"/>
+        </div>
+        <button class="btn btn-primary" type="submit" onclick="firstTimeValidate()">Add Lift</button>
+        <div id="errors"></div>
+    </form>
+    <style>
+        h1{margin-bottom: 20px;}
+    </style>
+{% endblock %}

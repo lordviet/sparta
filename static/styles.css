@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .red
+{
+    color: #bf0000;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 0;
+}
+
+main .form-control:focus
+{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid red;
+    border-radius: 0;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+#spartafont
+{
+    font-family: 'Permanent Marker', cursive;
+}
+
+.btn-primary
+{
+    padding: .375rem 5rem;
+    border-radius: 25px;
+    background-color: white;
+    border:1.5px solid #bf0000;
+    color: #bf0000;
+}
+
+.btn-primary:hover
+{
+    background-color:#bf0000;
+    border-color: #bf0000;
+    color: white;
+}
+
+.greeting
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+
+    margin: 10px;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    font-size: 28px;
+
+
+}
+
+h1
+{
+    font-size: 65px;
+    font-family: 'Permanent Marker', cursive;
+    color: #bf0000;
+}
+
+#spartan
+{
+    font-family: 'Permanent Marker', cursive;
+    color: #bf0000;
+}
+
+.textcolor
+{
+    color: #212529;
+}
+
+.textcolor:hover
+{
+    color: #bf0000;
+    text-decoration: none;
+}
+
+#signup
+{
+    margin: 5px;
+}
+
+#errors
+{
+    font-family: sans-serif;
+    margin: 10px;
+    padding: 10px;
+    color: red;
+}

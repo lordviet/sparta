@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stats
+{% endblock %}
+
+{% block main %}
+    <h1>Stats</h1>
+    <h4>Your current stats are:</h4>
+    <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><a class="textcolor" href="/deadlift">Deadlift</a></th>
+                    <th><a class="textcolor" href="/bench">Bench Press</a></th>
+                    <th><a class="textcolor" href="/squat">Squat</a></th>
+                    <th><a class="textcolor" href="/overheadpress">Overhead Press</a></th>
+                    <th><a class="textcolor" href="/pullups">Pull-ups</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in stats %}
+                <tr>
+                    <td>{{ data.deadlift }}</td>
+                    <td>{{ data.bench }}</td>
+                    <td>{{ data.squat }}</td>
+                    <td>{{ data.overheadpress }}</td>
+                    <td>{{ data.pullups }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <style>
+        h1, h4{margin-bottom: 20px;}
+    </style>
+{% endblock %}
