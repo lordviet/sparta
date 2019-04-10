@@ -1,14 +1,13 @@
 import requests
 import datetime
-import urllib.parse
+import psycopg2
 
 from flask import redirect, render_template, request, session
 from functools import wraps
 from random import randint
 from cs50 import SQL
 
-db = SQL("postgres://njniejknyhtyxb:0efce18ce29dff8371f186ff15d5b5870945be5bb2a743a87ab4f706a6a929b3@ec2-54-246-92-116.eu-west-1.compute.amazonaws.com:5432/dd4jcgtmu8vngd")
-
+db = SQL("sqlite:///sparta.db")
 def apology(message, code=400):
     """Render message as an apology to user."""
     def escape(s):

@@ -1,5 +1,6 @@
 import os
 import datetime
+import psycopg2
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -30,8 +31,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("postgres://njniejknyhtyxb:0efce18ce29dff8371f186ff15d5b5870945be5bb2a743a87ab4f706a6a929b3@ec2-54-246-92-116.eu-west-1.compute.amazonaws.com:5432/dd4jcgtmu8vngd")
-
+db = SQL("sqlite:///sparta.db")
 
 @app.route("/")
 @login_required
@@ -416,6 +416,7 @@ def register():
         # Username and hash as placeholders to protect from injection attacks
         result = db.execute("INSERT INTO users (username, hash) VALUES(:username, :hash)",
         username = request.form.get("username"), hash = hash)
+        print(result)
 
         # If the username is taken render the new template
         if not result:
