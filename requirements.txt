@@ -75,7 +75,7 @@ termcolor==1.1.0
 tinycss2==0.6.1
 traitlets==4.3.2
 twython==3.6.0
-urllib3==1.22
+urllib3==1.24.2
 virtualenv==15.2.0
 WeasyPrint==0.42.3
 webencodings==0.5.1
