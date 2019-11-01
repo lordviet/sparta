@@ -64,7 +64,7 @@ python-magic==0.4.15
 pytz==2018.3
 PyYAML==3.13
 render50==3.0.2
-requests==2.18.4
+requests==2.20.0
 requests-oauthlib==0.8.0
 six==1.11.0
 SQLAlchemy==1.2.6
