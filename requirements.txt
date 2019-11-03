@@ -62,7 +62,7 @@ PyPDF2==1.26.0
 Pyphen==0.9.4
 python-magic==0.4.15
 pytz==2018.3
-PyYAML==3.13
+PyYAML==5.1
 render50==3.0.2
 requests==2.20.0
 requests-oauthlib==0.8.0
