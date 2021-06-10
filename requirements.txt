@@ -15,7 +15,7 @@ cs50==3.0.1
 cssselect2==0.2.1
 decorator==4.2.1
 defusedxml==0.5.0
-Django==2.1.11
+Django==2.2.24
 EditorConfig==0.12.1
 feedparser==5.2.1
 Flask==1.0.2
